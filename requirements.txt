@@ -4,3 +4,4 @@ mysqlclient
 django-allauth
 django-sitemaps
 python-dotenv
+channels
