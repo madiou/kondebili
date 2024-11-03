@@ -6,3 +6,4 @@ django-sitemaps
 python-dotenv
 channels
 requests
+pyjwt
