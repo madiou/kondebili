@@ -1,0 +1,6 @@
+django>=3.2,<4.0
+gunicorn
+mysqlclient
+django-allauth
+django-sitemaps
+python-dotenv
