@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approuver un commentaire</title>
+</head>
+<body>
+    <h1>Approuver le commentaire</h1>
+    <p>Auteur: {{ comment.author }}</p>
+    <p>Commentaire: {{ comment.text }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Approuver</button>
+    </form>
+</body>
+</html>

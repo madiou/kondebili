@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de bord Administrateur</title>
+</head>
+<body>
+    <h1>Tableau de bord Administrateur</h1>
+    
+    <h2>Articles en attente d'approbation</h2>
+    <ul>
+        {% for article in pending_articles %}
+            <li>
+                <a href="{% url 'approve_article' article.id %}">{{ article.title }}</a>
+                par {{ article.author.username }}
+            </li>
+        {% endfor %}
+    </ul>
+    
+    <h2>Commentaires en attente d'approbation</h2>
+    <ul>
+        {% for comment in pending_comments %}
+            <li>
+                <a href="{% url 'approve_comment' comment.id %}">{{ comment.text|truncatewords:10 }}</a>
+                par {{ comment.author }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
