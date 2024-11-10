@@ -1,12 +1,6 @@
 from django.urls import path
 from . import views
-from blog import views as blog_views
-# from django.contrib.sitemaps.views import sitemap
-# from blog.sitemaps import ArticleSitemap
-
-# sitemaps = {
-#     'articles': ArticleSitemap,
-# }
+# from blog import views as blog_views
 
 urlpatterns = [
     path('submit/', views.submit_article, name='submit_article'),
@@ -17,6 +11,5 @@ urlpatterns = [
     path('comment/approve/<int:comment_id>/', views.approve_comment, name='approve_comment'),
     path('dashboard/', views.dashboard, name='dashboard'),
     path('search/', views.search, name='search'),
-    path('', blog_views.home, name='home'),
-    # path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    path('', views.home, name='home'),
 ]
