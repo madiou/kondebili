@@ -4,15 +4,15 @@ const port = 3000;
 
 // Définir les routes
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/home.html');
+    res.sendFile(__dirname + '/index.html');
 });
 
 app.get('/articles', (req, res) => {
-    res.sendFile(__dirname + '/base.html');
+    res.sendFile(__dirname + '/articles.html');
 });
 
 app.get('/about', (req, res) => {
-    res.sendFile(__dirname + '/admin.html');
+    res.sendFile(__dirname + '/about.html');
 });
 
 app.get('/contact', (req, res) => {
