@@ -1,25 +1,26 @@
 const express = require('express');
+const path = require('path');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
-// Définir les routes
+app.use(express.static(path.join(__dirname, 'templates')));
+
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/home.html');
+    res.sendFile(path.join(__dirname, 'templates', 'home.html'));
 });
 
 app.get('/articles', (req, res) => {
-    res.sendFile(__dirname + '/base.html');
+    res.sendFile(path.join(__dirname, 'templates', 'article_detail.html'));
 });
 
 app.get('/about', (req, res) => {
-    res.sendFile(__dirname + '/admin.html');
+    res.sendFile(path.join(__dirname, 'templates', 'base.html'));
 });
 
 app.get('/contact', (req, res) => {
-    res.sendFile(__dirname + '/contact.html');
+    res.sendFile(path.join(__dirname, 'templates', 'dashboard.html'));
 });
 
-// Démarrer le serveur
 app.listen(port, () => {
-    console.log(`Serveur à l'écoute sur http://localhost:${port}`);
+    console.log('http://localhost:${port}');
 });
