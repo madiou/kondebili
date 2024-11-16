@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Soumettre un article</title>
 </head>
 <body>
@@ -10,7 +11,17 @@
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Soumettre</button>
+        {% comment %} <button type="submit">Soumettre</button> {% endcomment %}
+        <button class="navbar-toggler" 
+        type="submit" 
+        data-toggle="collapse" 
+        data-target="#navbarNav" 
+        aria-controls="navbarNav" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation"> 
+    <span class="navbar-toggler-icon"></span>
+    Soumettre
+</button>
     </form>
 </body>
 </html>
