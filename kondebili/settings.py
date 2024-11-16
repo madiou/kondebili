@@ -113,18 +113,6 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'nom_de_la_base',
-#         'USER': 'nom_utilisateur',
-#         'PASSWORD': 'mot_de_passe',
-#         'HOST': 'localhost',  # Changez-le en l'adresse IP du serveur ou le nom de domaine si MySQL est hébergé ailleurs.
-#         'PORT': '3306',       # Assurez-vous que c'est le bon port.
-#     }
-# }
-
-
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # Password validation
