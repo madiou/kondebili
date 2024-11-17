@@ -1,6 +1,4 @@
 from pathlib import Path
-# import os
-# from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / "subdir".
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -13,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-b!)w)xlyy**yy+d@wa^5lob0dyt^lel&j_hw7g$q-5%q6-%(+@"
 
 # SECURITY WARNING: don"t run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['kondebili.com', '127.0.0.1', 'autredomaine.com', 'kondebili-1.onrender.com']
 
@@ -82,21 +80,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "kondebili.wsgi.application"
 
-
-# Database
-# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.mysql",
-#         "NAME": "kondebili_db",
-#         "USER": "mahdi",
-#         "PASSWORD": "OrIbr@him@1982O",
-#         "HOST": "localhost",
-#         "PORT": "3306",
-#     }
-# }
-
 import os
 from dotenv import load_dotenv
 
@@ -105,13 +88,14 @@ load_dotenv()
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': '127.0.0.1',
-        'PORT': os.getenv('DB_PORT'),
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT'),
     }
 }
+
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
